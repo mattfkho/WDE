@@ -18,68 +18,68 @@ namespace WDE.Clients
     /// </summary>
     public partial interface IClient
     {
-        /// <summary>
-        /// Exercise 1 - Basic response (token and name).
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request);
+        ///// <summary>
+        ///// Exercise 1 - Basic response (token and name).
+        ///// </summary>
+        ///// <param name="request">The request.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request);
 
-        /// <summary>
-        /// Exercise 1 - Basic response (token and name).
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken);
+        ///// <summary>
+        ///// Exercise 1 - Basic response (token and name).
+        ///// </summary>
+        ///// <param name="request">The request.</param>
+        ///// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken);
 
-        /// <summary>
-        /// Exercise 2 - This will test your sorting endpoint.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request);
+        ///// <summary>
+        ///// Exercise 2 - This will test your sorting endpoint.
+        ///// </summary>
+        ///// <param name="request">The request.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request);
 
-        /// <summary>
-        /// Exercise 2 - This will test your sorting endpoint.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken);
+        ///// <summary>
+        ///// Exercise 2 - This will test your sorting endpoint.
+        ///// </summary>
+        ///// <param name="request">The request.</param>
+        ///// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken);
 
-        /// <summary>
-        /// Exercise 3 - Given products specials and quantities, return the trolleys total.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request);
+        ///// <summary>
+        ///// Exercise 3 - Given products specials and quantities, return the trolleys total.
+        ///// </summary>
+        ///// <param name="request">The request.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request);
 
-        /// <summary>
-        /// Exercise 3 - Given products specials and quantities, return the trolleys total.
-        /// </summary>
-        /// <param name="request">The request.</param>
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken);
+        ///// <summary>
+        ///// Exercise 3 - Given products specials and quantities, return the trolleys total.
+        ///// </summary>
+        ///// <param name="request">The request.</param>
+        ///// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken);
 
         /// <summary>
         /// This will return all customers buying habits for a range of products
@@ -204,262 +204,283 @@ namespace WDE.Clients
         /// </value>
         protected JsonSerializerSettings JsonSerializerSettings { get { return _settings.Value; } }
 
+        /// <summary>
+        /// Updates the json serializer settings.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
         partial void UpdateJsonSerializerSettings(JsonSerializerSettings settings);
 
+        /// <summary>
+        /// Prepares the request.
+        /// </summary>
+        /// <param name="client">The client.</param>
+        /// <param name="request">The request.</param>
+        /// <param name="url">The URL.</param>
         partial void PrepareRequest(HttpClient client, HttpRequestMessage request, string url);
 
+        /// <summary>
+        /// Prepares the request.
+        /// </summary>
+        /// <param name="client">The client.</param>
+        /// <param name="request">The request.</param>
+        /// <param name="urlBuilder">The URL builder.</param>
         partial void PrepareRequest(HttpClient client, HttpRequestMessage request, StringBuilder urlBuilder);
 
+        /// <summary>
+        /// Processes the response.
+        /// </summary>
+        /// <param name="client">The client.</param>
+        /// <param name="response">The response.</param>
         partial void ProcessResponse(HttpClient client, HttpResponseMessage response);
 
-        /// <summary>
-        /// Exercise 1 - Basic response (token and name).
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request)
-        {
-            return ApiExerciseExercise1PostAsync(request, CancellationToken.None);
-        }
+        ///// <summary>
+        ///// Exercise 1 - Basic response (token and name).
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //public Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request)
+        //{
+        //    return ApiExerciseExercise1PostAsync(request, CancellationToken.None);
+        //}
 
-        /// <summary>
-        /// Exercise 1 - Basic response (token and name).
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken)
-        {
-            var urlBuilder = new StringBuilder();
-            urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Exercise/exercise1");
+        ///// <summary>
+        ///// Exercise 1 - Basic response (token and name).
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //public async Task<ICollection<ExerciseResult>> ApiExerciseExercise1PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken)
+        //{
+        //    var urlBuilder = new StringBuilder();
+        //    urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Exercise/exercise1");
 
-            var client = _httpClient;
-            try
-            {
-                using (var requestMessage = new HttpRequestMessage())
-                {
-                    var content = new StringContent(JsonConvert.SerializeObject(request, _settings.Value));
-                    content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
-                    requestMessage.Content = content;
-                    requestMessage.Method = new HttpMethod("POST");
-                    requestMessage.Headers.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
+        //    var client = _httpClient;
+        //    try
+        //    {
+        //        using (var requestMessage = new HttpRequestMessage())
+        //        {
+        //            var content = new StringContent(JsonConvert.SerializeObject(request, _settings.Value));
+        //            content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+        //            requestMessage.Content = content;
+        //            requestMessage.Method = new HttpMethod("POST");
+        //            requestMessage.Headers.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
-                    PrepareRequest(client, requestMessage, urlBuilder);
-                    var url = urlBuilder.ToString();
-                    requestMessage.RequestUri = new Uri(url, UriKind.RelativeOrAbsolute);
-                    PrepareRequest(client, requestMessage, url);
+        //            PrepareRequest(client, requestMessage, urlBuilder);
+        //            var url = urlBuilder.ToString();
+        //            requestMessage.RequestUri = new Uri(url, UriKind.RelativeOrAbsolute);
+        //            PrepareRequest(client, requestMessage, url);
 
-                    var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    try
-                    {
-                        var headers = Enumerable.ToDictionary(response.Headers, h => h.Key, h => h.Value);
-                        if (response.Content != null && response.Content.Headers != null)
-                        {
-                            foreach (var item in response.Content.Headers)
-                                headers[item.Key] = item.Value;
-                        }
+        //            var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+        //            try
+        //            {
+        //                var headers = Enumerable.ToDictionary(response.Headers, h => h.Key, h => h.Value);
+        //                if (response.Content != null && response.Content.Headers != null)
+        //                {
+        //                    foreach (var item in response.Content.Headers)
+        //                        headers[item.Key] = item.Value;
+        //                }
 
-                        ProcessResponse(client, response);
+        //                ProcessResponse(client, response);
 
-                        var status = ((int)response.StatusCode).ToString();
-                        if (status == "200")
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ICollection<ExerciseResult>>(response, headers).ConfigureAwait(false);
-                            return objectResponse_.Object;
-                        }
-                        else
-                        if (status != "200" && status != "204")
-                        {
-                            var responseData = response.Content == null ? null : await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + (int)response.StatusCode + ").", (int)response.StatusCode, responseData, headers, null);
-                        }
+        //                var status = ((int)response.StatusCode).ToString();
+        //                if (status == "200")
+        //                {
+        //                    var objectResponse_ = await ReadObjectResponseAsync<ICollection<ExerciseResult>>(response, headers).ConfigureAwait(false);
+        //                    return objectResponse_.Object;
+        //                }
+        //                else
+        //                if (status != "200" && status != "204")
+        //                {
+        //                    var responseData = response.Content == null ? null : await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        //                    throw new ApiException("The HTTP status code of the response was not expected (" + (int)response.StatusCode + ").", (int)response.StatusCode, responseData, headers, null);
+        //                }
 
-                        return default(ICollection<ExerciseResult>);
-                    }
-                    finally
-                    {
-                        if (response != null)
-                            response.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-            }
-        }
+        //                return default(ICollection<ExerciseResult>);
+        //            }
+        //            finally
+        //            {
+        //                if (response != null)
+        //                    response.Dispose();
+        //            }
+        //        }
+        //    }
+        //    finally
+        //    {
+        //    }
+        //}
 
-        /// <summary>
-        /// Exercise 2 - This will test your sorting endpoint.
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request)
-        {
-            return ApiExerciseExercise2PostAsync(request, CancellationToken.None);
-        }
+        ///// <summary>
+        ///// Exercise 2 - This will test your sorting endpoint.
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //public Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request)
+        //{
+        //    return ApiExerciseExercise2PostAsync(request, CancellationToken.None);
+        //}
 
-        /// <summary>
-        /// Exercise 2 - This will test your sorting endpoint.
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken)
-        {
-            var urlBuilder = new StringBuilder();
-            urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Exercise/exercise2");
+        ///// <summary>
+        ///// Exercise 2 - This will test your sorting endpoint.
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //public async Task<ICollection<ExerciseResult>> ApiExerciseExercise2PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken)
+        //{
+        //    var urlBuilder = new StringBuilder();
+        //    urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Exercise/exercise2");
 
-            var client = _httpClient;
-            try
-            {
-                using (var requestMessage = new HttpRequestMessage())
-                {
-                    var content = new StringContent(JsonConvert.SerializeObject(request, _settings.Value));
-                    content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
-                    requestMessage.Content = content;
-                    requestMessage.Method = new HttpMethod("POST");
-                    requestMessage.Headers.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
+        //    var client = _httpClient;
+        //    try
+        //    {
+        //        using (var requestMessage = new HttpRequestMessage())
+        //        {
+        //            var content = new StringContent(JsonConvert.SerializeObject(request, _settings.Value));
+        //            content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+        //            requestMessage.Content = content;
+        //            requestMessage.Method = new HttpMethod("POST");
+        //            requestMessage.Headers.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
-                    PrepareRequest(client, requestMessage, urlBuilder);
-                    var url = urlBuilder.ToString();
-                    requestMessage.RequestUri = new Uri(url, UriKind.RelativeOrAbsolute);
-                    PrepareRequest(client, requestMessage, url);
+        //            PrepareRequest(client, requestMessage, urlBuilder);
+        //            var url = urlBuilder.ToString();
+        //            requestMessage.RequestUri = new Uri(url, UriKind.RelativeOrAbsolute);
+        //            PrepareRequest(client, requestMessage, url);
 
-                    var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    try
-                    {
-                        var headers = Enumerable.ToDictionary(response.Headers, h => h.Key, h => h.Value);
-                        if (response.Content != null && response.Content.Headers != null)
-                        {
-                            foreach (var item in response.Content.Headers)
-                                headers[item.Key] = item.Value;
-                        }
+        //            var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+        //            try
+        //            {
+        //                var headers = Enumerable.ToDictionary(response.Headers, h => h.Key, h => h.Value);
+        //                if (response.Content != null && response.Content.Headers != null)
+        //                {
+        //                    foreach (var item in response.Content.Headers)
+        //                        headers[item.Key] = item.Value;
+        //                }
 
-                        ProcessResponse(client, response);
+        //                ProcessResponse(client, response);
 
-                        var status = ((int)response.StatusCode).ToString();
-                        if (status == "200")
-                        {
-                            var objectResponse = await ReadObjectResponseAsync<ICollection<ExerciseResult>>(response, headers).ConfigureAwait(false);
-                            return objectResponse.Object;
-                        }
-                        else
-                        if (status != "200" && status != "204")
-                        {
-                            var responseData_ = response.Content == null ? null : await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + (int)response.StatusCode + ").", (int)response.StatusCode, responseData_, headers, null);
-                        }
+        //                var status = ((int)response.StatusCode).ToString();
+        //                if (status == "200")
+        //                {
+        //                    var objectResponse = await ReadObjectResponseAsync<ICollection<ExerciseResult>>(response, headers).ConfigureAwait(false);
+        //                    return objectResponse.Object;
+        //                }
+        //                else
+        //                if (status != "200" && status != "204")
+        //                {
+        //                    var responseData = response.Content == null ? null : await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        //                    throw new ApiException("The HTTP status code of the response was not expected (" + (int)response.StatusCode + ").", (int)response.StatusCode, responseData, headers, null);
+        //                }
 
-                        return default(ICollection<ExerciseResult>);
-                    }
-                    finally
-                    {
-                        if (response != null)
-                            response.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-            }
-        }
+        //                return default(ICollection<ExerciseResult>);
+        //            }
+        //            finally
+        //            {
+        //                if (response != null)
+        //                    response.Dispose();
+        //            }
+        //        }
+        //    }
+        //    finally
+        //    {
+        //    }
+        //}
 
-        /// <summary>
-        /// Exercise 3 - Given products specials and quantities, return the trolleys total.
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request)
-        {
-            return ApiExerciseExercise3PostAsync(request, CancellationToken.None);
-        }
+        ///// <summary>
+        ///// Exercise 3 - Given products specials and quantities, return the trolleys total.
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //public Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request)
+        //{
+        //    return ApiExerciseExercise3PostAsync(request, CancellationToken.None);
+        //}
 
-        /// <summary>
-        /// Exercise 3 - Given products specials and quantities, return the trolleys total.
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>
-        /// Success
-        /// </returns>
-        /// <exception cref="WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken)
-        {
-            var urlBuilder = new StringBuilder();
-            urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Exercise/exercise3");
+        ///// <summary>
+        ///// Exercise 3 - Given products specials and quantities, return the trolleys total.
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        ///// <returns>
+        ///// Success
+        ///// </returns>
+        ///// <exception cref="WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
+        ///// <exception cref="ApiException">A server side error occurred.</exception>
+        //public async Task<ICollection<ExerciseResult>> ApiExerciseExercise3PostAsync(TrolleyExerciseRequest request, CancellationToken cancellationToken)
+        //{
+        //    var urlBuilder = new StringBuilder();
+        //    urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Exercise/exercise3");
 
-            var client = _httpClient;
-            try
-            {
-                using (var requestMessage = new HttpRequestMessage())
-                {
-                    var content = new StringContent(JsonConvert.SerializeObject(request, _settings.Value));
-                    content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
-                    requestMessage.Content = content;
-                    requestMessage.Method = new HttpMethod("POST");
-                    requestMessage.Headers.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
+        //    var client = _httpClient;
+        //    try
+        //    {
+        //        using (var requestMessage = new HttpRequestMessage())
+        //        {
+        //            var content = new StringContent(JsonConvert.SerializeObject(request, _settings.Value));
+        //            content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+        //            requestMessage.Content = content;
+        //            requestMessage.Method = new HttpMethod("POST");
+        //            requestMessage.Headers.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
-                    PrepareRequest(client, requestMessage, urlBuilder);
-                    var url = urlBuilder.ToString();
-                    requestMessage.RequestUri = new Uri(url, UriKind.RelativeOrAbsolute);
-                    PrepareRequest(client, requestMessage, url);
+        //            PrepareRequest(client, requestMessage, urlBuilder);
+        //            var url = urlBuilder.ToString();
+        //            requestMessage.RequestUri = new Uri(url, UriKind.RelativeOrAbsolute);
+        //            PrepareRequest(client, requestMessage, url);
 
-                    var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    try
-                    {
-                        var headers = Enumerable.ToDictionary(response.Headers, h => h.Key, h => h.Value);
-                        if (response.Content != null && response.Content.Headers != null)
-                        {
-                            foreach (var item in response.Content.Headers)
-                                headers[item.Key] = item.Value;
-                        }
+        //            var response = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+        //            try
+        //            {
+        //                var headers = Enumerable.ToDictionary(response.Headers, h => h.Key, h => h.Value);
+        //                if (response.Content != null && response.Content.Headers != null)
+        //                {
+        //                    foreach (var item in response.Content.Headers)
+        //                        headers[item.Key] = item.Value;
+        //                }
 
-                        ProcessResponse(client, response);
+        //                ProcessResponse(client, response);
 
-                        var status = ((int)response.StatusCode).ToString();
-                        if (status == "200")
-                        {
-                            var objectResponse = await ReadObjectResponseAsync<ICollection<ExerciseResult>>(response, headers).ConfigureAwait(false);
-                            return objectResponse.Object;
-                        }
-                        else
-                        if (status != "200" && status != "204")
-                        {
-                            var responseData = response.Content == null ? null : await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + (int)response.StatusCode + ").", (int)response.StatusCode, responseData, headers, null);
-                        }
+        //                var status = ((int)response.StatusCode).ToString();
+        //                if (status == "200")
+        //                {
+        //                    var objectResponse = await ReadObjectResponseAsync<ICollection<ExerciseResult>>(response, headers).ConfigureAwait(false);
+        //                    return objectResponse.Object;
+        //                }
+        //                else
+        //                if (status != "200" && status != "204")
+        //                {
+        //                    var responseData = response.Content == null ? null : await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        //                    throw new ApiException("The HTTP status code of the response was not expected (" + (int)response.StatusCode + ").", (int)response.StatusCode, responseData, headers, null);
+        //                }
 
-                        return default(ICollection<ExerciseResult>);
-                    }
-                    finally
-                    {
-                        if (response != null)
-                            response.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-            }
-        }
+        //                return default(ICollection<ExerciseResult>);
+        //            }
+        //            finally
+        //            {
+        //                if (response != null)
+        //                    response.Dispose();
+        //            }
+        //        }
+        //    }
+        //    finally
+        //    {
+        //    }
+        //}
 
         /// <summary>
         /// This will return all customers buying habits for a range of products
@@ -886,7 +907,7 @@ namespace WDE.Clients
         /// <value>
         /// The headers.
         /// </value>
-        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
+        public IReadOnlyDictionary<string, IEnumerable<string>> Headers { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiException"/> class.
@@ -896,7 +917,7 @@ namespace WDE.Clients
         /// <param name="response">The response.</param>
         /// <param name="headers">The headers.</param>
         /// <param name="innerException">The inner exception.</param>
-        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException)
+        public ApiException(string message, int statusCode, string response, IReadOnlyDictionary<string, IEnumerable<string>> headers, Exception innerException)
             : base(message + "\n\nStatus: " + statusCode + "\nResponse: \n" + response.Substring(0, response.Length >= 512 ? 512 : response.Length), innerException)
         {
             StatusCode = statusCode;

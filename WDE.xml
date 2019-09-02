@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WDE</name>
+    </assembly>
+    <members>
+        <member name="T:WDE.Clients.IClient">
+            <summary>
+            Client Interface
+            </summary>
+        </member>
+        <member name="M:WDE.Clients.IClient.ApiResourceShopperHistoryGetAsync(System.Guid)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token">The token.</param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.IClient.ApiResourceShopperHistoryGetAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token">The token.</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.IClient.ApiResourceProductsGetAsync(System.Guid)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token">The token.</param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.IClient.ApiResourceProductsGetAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token">The token.</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.IClient.ApiResourceTrolleyCalculatorPostAsync(System.Guid,WDE.Models.Trolley)">
+            <summary>
+            This will return the lowest total given products, specials and quantities.
+            </summary>
+            <param name="token">The token.</param>
+            <param name="request">The request.</param>
+            <returns>
+            Value of the calculated trolley.
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.IClient.ApiResourceTrolleyCalculatorPostAsync(System.Guid,WDE.Models.Trolley,System.Threading.CancellationToken)">
+            <summary>
+            This will return the lowest total given products, specials and quantities.
+            </summary>
+            <param name="token">The token.</param>
+            <param name="request">The request.</param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>
+            Value of the calculated trolley.
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="T:WDE.Clients.ApiClient">
+            <summary>
+            The API client
+            </summary>
+            <seealso cref="T:WDE.Clients.IClient" />
+        </member>
+        <member name="F:WDE.Clients.ApiClient._baseUrl">
+            <summary>
+            The base URL
+            </summary>
+        </member>
+        <member name="F:WDE.Clients.ApiClient._httpClient">
+            <summary>
+            The HTTP client
+            </summary>
+        </member>
+        <member name="F:WDE.Clients.ApiClient._settings">
+            <summary>
+            The settings
+            </summary>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WDE.Clients.ApiClient"/> class.
+            </summary>
+            <param name="httpClient">The HTTP client.</param>
+        </member>
+        <member name="P:WDE.Clients.ApiClient.BaseUrl">
+            <summary>
+            Gets or sets the base URL.
+            </summary>
+            <value>
+            The base URL.
+            </value>
+        </member>
+        <member name="P:WDE.Clients.ApiClient.JsonSerializerSettings">
+            <summary>
+            Gets the json serializer settings.
+            </summary>
+            <value>
+            The json serializer settings.
+            </value>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ApiResourceShopperHistoryGetAsync(System.Guid)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token"></param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ApiResourceShopperHistoryGetAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token"></param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:System.ArgumentNullException">token</exception>
+            <exception cref="T:WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ApiResourceProductsGetAsync(System.Guid)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token"></param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ApiResourceProductsGetAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            This will return all customers buying habits for a range of products
+            </summary>
+            <param name="token"></param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>
+            Success
+            </returns>
+            <exception cref="T:System.ArgumentNullException">token</exception>
+            <exception cref="T:WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ApiResourceTrolleyCalculatorPostAsync(System.Guid,WDE.Models.Trolley)">
+            <summary>
+            This will return the lowest total given products, specials and quantities.
+            </summary>
+            <param name="token"></param>
+            <param name="request"></param>
+            <returns>
+            Value of the calculated trolley.
+            </returns>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ApiResourceTrolleyCalculatorPostAsync(System.Guid,WDE.Models.Trolley,System.Threading.CancellationToken)">
+            <summary>
+            This will return the lowest total given products, specials and quantities.
+            </summary>
+            <param name="token"></param>
+            <param name="request"></param>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>
+            Value of the calculated trolley.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">token</exception>
+            <exception cref="T:WDE.Clients.ApiException">The HTTP status code of the response was not expected (" + (int)response.StatusCode + "). - null</exception>
+            <exception cref="T:WDE.Clients.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="T:WDE.Clients.ApiClient.ObjectResponseResult`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ObjectResponseResult`1.#ctor(`0,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WDE.Clients.ApiClient.ObjectResponseResult`1"/> struct.
+            </summary>
+            <param name="responseObject">The response object.</param>
+            <param name="responseText">The response text.</param>
+        </member>
+        <member name="P:WDE.Clients.ApiClient.ObjectResponseResult`1.Object">
+            <summary>
+            Gets the object.
+            </summary>
+            <value>
+            The object.
+            </value>
+        </member>
+        <member name="P:WDE.Clients.ApiClient.ObjectResponseResult`1.Text">
+            <summary>
+            Gets the text.
+            </summary>
+            <value>
+            The text.
+            </value>
+        </member>
+        <member name="P:WDE.Clients.ApiClient.ReadResponseAsString">
+            <summary>
+            Gets or sets a value indicating whether [read response as string].
+            </summary>
+            <value>
+              <c>true</c> if [read response as string]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ReadObjectResponseAsync``1(System.Net.Http.HttpResponseMessage,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            Reads the object response asynchronous.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="response">The response.</param>
+            <param name="headers">The headers.</param>
+            <returns></returns>
+            <exception cref="T:WDE.Clients.ApiException">
+            </exception>
+        </member>
+        <member name="M:WDE.Clients.ApiClient.ConvertToString(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts to string.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="cultureInfo">The culture information.</param>
+            <returns></returns>
+        </member>
+        <member name="T:WDE.Clients.ApiException">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="P:WDE.Clients.ApiException.StatusCode">
+            <summary>
+            Gets the status code.
+            </summary>
+            <value>
+            The status code.
+            </value>
+        </member>
+        <member name="P:WDE.Clients.ApiException.Response">
+            <summary>
+            Gets the response.
+            </summary>
+            <value>
+            The response.
+            </value>
+        </member>
+        <member name="P:WDE.Clients.ApiException.Headers">
+            <summary>
+            Gets the headers.
+            </summary>
+            <value>
+            The headers.
+            </value>
+        </member>
+        <member name="M:WDE.Clients.ApiException.#ctor(System.String,System.Int32,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}},System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WDE.Clients.ApiException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="statusCode">The status code.</param>
+            <param name="response">The response.</param>
+            <param name="headers">The headers.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:WDE.Clients.ApiException.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:WDE.Controllers.AnswersController">
+            <summary>
+            Thte Answers
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:WDE.Controllers.AnswersController.Ex1GetUser">
+            <summary>
+            Gets the user.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WDE.Controllers.AnswersController.Ex2GetSortedProducts(System.String)">
+            <summary>
+            Gets the products.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WDE.Controllers.AnswersController.Ex3GetTrolleyTotal">
+            <summary>
+            Gets the trolley total.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WDE.Models.ShopperOrders">
+            <summary>
+            Shopper Orders
+            </summary>
+        </member>
+        <member name="P:WDE.Models.ShopperOrders.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>
+            The customer identifier.
+            </value>
+        </member>
+        <member name="P:WDE.Models.ShopperOrders.Products">
+            <summary>
+            Gets or sets the products.
+            </summary>
+            <value>
+            The products.
+            </value>
+        </member>
+        <member name="T:WDE.Models.Product">
+            <summary>
+            The Product
+            </summary>
+        </member>
+        <member name="P:WDE.Models.Product.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:WDE.Models.Product.Price">
+            <summary>
+            Gets or sets the price.
+            </summary>
+            <value>
+            The price.
+            </value>
+        </member>
+        <member name="P:WDE.Models.Product.Quantity">
+            <summary>
+            Gets or sets the quantity.
+            </summary>
+            <value>
+            The quantity.
+            </value>
+        </member>
+        <member name="T:WDE.Models.Trolley">
+            <summary>
+            The Trolley
+            </summary>
+        </member>
+        <member name="P:WDE.Models.Trolley.Products">
+            <summary>
+            Gets or sets the products.
+            </summary>
+            <value>
+            The products.
+            </value>
+        </member>
+        <member name="P:WDE.Models.Trolley.Specials">
+            <summary>
+            Gets or sets the specials.
+            </summary>
+            <value>
+            The specials.
+            </value>
+        </member>
+        <member name="P:WDE.Models.Trolley.Quantities">
+            <summary>
+            Gets or sets the quantities.
+            </summary>
+            <value>
+            The quantities.
+            </value>
+        </member>
+        <member name="T:WDE.Models.Product2">
+            <summary>
+            Product 2
+            </summary>
+        </member>
+        <member name="P:WDE.Models.Product2.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:WDE.Models.Product2.Price">
+            <summary>
+            Gets or sets the price.
+            </summary>
+            <value>
+            The price.
+            </value>
+        </member>
+        <member name="T:WDE.Models.Special">
+            <summary>
+            Special
+            </summary>
+        </member>
+        <member name="P:WDE.Models.Special.Quantities">
+            <summary>
+            Gets or sets the quantities.
+            </summary>
+            <value>
+            The quantities.
+            </value>
+        </member>
+        <member name="P:WDE.Models.Special.Total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>
+            The total.
+            </value>
+        </member>
+        <member name="T:WDE.Models.ProductQuantity">
+            <summary>
+            Product Quantity
+            </summary>
+        </member>
+        <member name="P:WDE.Models.ProductQuantity.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:WDE.Models.ProductQuantity.Quantity">
+            <summary>
+            Gets or sets the quantity.
+            </summary>
+            <value>
+            The quantity.
+            </value>
+        </member>
+        <member name="T:WDE.Models.User">
+            <summary>
+            The User
+            </summary>
+        </member>
+        <member name="P:WDE.Models.User.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:WDE.Models.User.Token">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:WDE.Program">
+            <summary>
+            The Program
+            </summary>
+        </member>
+        <member name="M:WDE.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:WDE.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Creates the web host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:WDE.Startup">
+            <summary>
+            The Start Up
+            </summary>
+        </member>
+        <member name="M:WDE.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WDE.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="P:WDE.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="M:WDE.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:WDE.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Configures the specified application.
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+    </members>
+</doc>

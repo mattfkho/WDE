@@ -1,66 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
 namespace WDE.Models
 {
-    /// <summary>
-    /// Trolley Exercise Request
-    /// </summary>
-    public partial class TrolleyExerciseRequest
-    {
-        /// <summary>
-        /// Unique token used to track candidate progress.
-        /// </summary>
-        /// <value>
-        /// The token.
-        /// </value>
-        [JsonProperty("token", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
-        public System.Guid? Token { get; set; }
+    ///// <summary>
+    ///// Trolley Exercise Request
+    ///// </summary>
+    //public partial class TrolleyExerciseRequest
+    //{
+    //    /// <summary>
+    //    /// Unique token used to track candidate progress.
+    //    /// </summary>
+    //    /// <value>
+    //    /// The token.
+    //    /// </value>
+    //    [JsonProperty("token", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+    //    public System.Guid? Token { get; set; }
 
-        /// <summary>
-        /// Url for your api which tests will be run against.
-        /// </summary>
-        /// <value>
-        /// The URL.
-        /// </value>
-        [JsonProperty("url", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
-        public string Url { get; set; }
-    }
+    //    /// <summary>
+    //    /// Url for your api which tests will be run against.
+    //    /// </summary>
+    //    /// <value>
+    //    /// The URL.
+    //    /// </value>
+    //    [JsonProperty("url", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+    //    public string Url { get; set; }
+    //}
 
-    /// <summary>
-    /// Exercise Result
-    /// </summary>
-    public partial class ExerciseResult
-    {
-        /// <summary>
-        /// Gets or sets the passed.
-        /// </summary>
-        /// <value>
-        /// The passed.
-        /// </value>
-        [JsonProperty("passed", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Passed { get; set; }
+    ///// <summary>
+    ///// Exercise Result
+    ///// </summary>
+    //public partial class ExerciseResult
+    //{
+    //    /// <summary>
+    //    /// Gets or sets the passed.
+    //    /// </summary>
+    //    /// <value>
+    //    /// The passed.
+    //    /// </value>
+    //    [JsonProperty("passed", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+    //    public bool? Passed { get; set; }
 
-        /// <summary>
-        /// Gets or sets the URL.
-        /// </summary>
-        /// <value>
-        /// The URL.
-        /// </value>
-        [JsonProperty("url", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
-        public string Url { get; set; }
+    //    /// <summary>
+    //    /// Gets or sets the URL.
+    //    /// </summary>
+    //    /// <value>
+    //    /// The URL.
+    //    /// </value>
+    //    [JsonProperty("url", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+    //    public string Url { get; set; }
 
-        /// <summary>
-        /// Gets or sets the message.
-        /// </summary>
-        /// <value>
-        /// The message.
-        /// </value>
-        [JsonProperty("message", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
-        public string Message { get; set; }
-    }
+    //    /// <summary>
+    //    /// Gets or sets the message.
+    //    /// </summary>
+    //    /// <value>
+    //    /// The message.
+    //    /// </value>
+    //    [JsonProperty("message", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+    //    public string Message { get; set; }
+    //}
 
     /// <summary>
     /// Shopper Orders
