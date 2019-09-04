@@ -4,59 +4,20 @@ using Newtonsoft.Json;
 
 namespace WDE.Models
 {
-    ///// <summary>
-    ///// Trolley Exercise Request
-    ///// </summary>
     //public partial class TrolleyExerciseRequest
     //{
-    //    /// <summary>
-    //    /// Unique token used to track candidate progress.
-    //    /// </summary>
-    //    /// <value>
-    //    /// The token.
-    //    /// </value>
     //    [JsonProperty("token", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
     //    public System.Guid? Token { get; set; }
-
-    //    /// <summary>
-    //    /// Url for your api which tests will be run against.
-    //    /// </summary>
-    //    /// <value>
-    //    /// The URL.
-    //    /// </value>
     //    [JsonProperty("url", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
     //    public string Url { get; set; }
     //}
 
-    ///// <summary>
-    ///// Exercise Result
-    ///// </summary>
     //public partial class ExerciseResult
     //{
-    //    /// <summary>
-    //    /// Gets or sets the passed.
-    //    /// </summary>
-    //    /// <value>
-    //    /// The passed.
-    //    /// </value>
     //    [JsonProperty("passed", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
     //    public bool? Passed { get; set; }
-
-    //    /// <summary>
-    //    /// Gets or sets the URL.
-    //    /// </summary>
-    //    /// <value>
-    //    /// The URL.
-    //    /// </value>
     //    [JsonProperty("url", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
     //    public string Url { get; set; }
-
-    //    /// <summary>
-    //    /// Gets or sets the message.
-    //    /// </summary>
-    //    /// <value>
-    //    /// The message.
-    //    /// </value>
     //    [JsonProperty("message", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
     //    public string Message { get; set; }
     //}
@@ -131,7 +92,7 @@ namespace WDE.Models
         /// </value>
         [JsonProperty("products", Required = Required.Always)]
         [Required]
-        public List<Product2> Products { get; set; } = new List<Product2>();
+        public List<TrolleyProduct> Products { get; set; } = new List<TrolleyProduct>();
 
         /// <summary>
         /// Gets or sets the specials.
@@ -155,9 +116,9 @@ namespace WDE.Models
     }
 
     /// <summary>
-    /// Product 2
+    /// Trolley Product
     /// </summary>
-    public partial class Product2
+    public partial class TrolleyProduct
     {
         /// <summary>
         /// Gets or sets the name.

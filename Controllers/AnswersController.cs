@@ -57,52 +57,31 @@ namespace WDE.Controllers
 
             try
             {
-                if (false == string.IsNullOrEmpty(sortOption) && sortOption.Equals("RECOMMENDED", StringComparison.OrdinalIgnoreCase))
+                switch (sortOption.ToUpper())
                 {
-                    var shopperHistory = apiClient.ApiResourceShopperHistoryGetAsync(_apiTopken).Result;
-                    List<Product> products2 = new List<Product>();
-                    foreach (var h in shopperHistory)
-                    {
-                        products2.AddRange(h.Products);
-                    }
+                    case "LOW":
+                        sortedProducts = GetProducts(apiClient, _apiTopken).OrderBy(x => x.Price).ToList();
+                        break;
 
-                    var popularProducts = products2.GroupBy(x => x.Name).Select(g => new Product
-                    {
-                        Name = g.Key,
-                        Price = g.First().Price,
-                        Quantity = g.Sum(x => x.Quantity)
-                    }).OrderByDescending(x => x.Quantity).ToList();
-                    //}).OrderByDescending(x => x.Quantity * x.Price).ToList();
+                    case "HIGH":
+                        sortedProducts = GetProducts(apiClient, _apiTopken).OrderByDescending(x => x.Price).ToList();
+                        break;
 
-                    //sortedProducts = popularProducts.Select(x => { return new Product { Name = x.Name, Price = x.Price, Quantity = 0 }; }).ToList();
-                    sortedProducts = popularProducts.ToList();
-                }
-                else
-                {
-                    var products = apiClient.ApiResourceProductsGetAsync(_apiTopken).Result;
+                    case "ASCENDING":
+                        sortedProducts = GetProducts(apiClient, _apiTopken).OrderBy(x => x.Name).ToList();
+                        break;
 
-                    switch (sortOption.ToUpper())
-                    {
-                        case "LOW":
-                            sortedProducts = products.OrderBy(x => x.Price).ToList();
-                            break;
+                    case "DESCENDING":
+                        sortedProducts = GetProducts(apiClient, _apiTopken).OrderByDescending(x => x.Name).ToList();
+                        break;
 
-                        case "HIGH":
-                            sortedProducts = products.OrderByDescending(x => x.Price).ToList();
-                            break;
+                    case "RECOMMENDED":
+                        sortedProducts = RecommendedProductsByShopperHistory(apiClient, _apiTopken).ToList();
+                        break;
 
-                        case "ASCENDING":
-                            sortedProducts = products.OrderBy(x => x.Name).ToList();
-                            break;
-
-                        case "DESCENDING":
-                            sortedProducts = products.OrderByDescending(x => x.Name).ToList();
-                            break;
-
-                        default:
-                            sortedProducts = products.ToList();
-                            break;
-                    }
+                    default:
+                        sortedProducts = GetProducts(apiClient, _apiTopken).ToList();
+                        break;
                 }
             }
             catch (Exception ex)
@@ -111,6 +90,48 @@ namespace WDE.Controllers
             }
 
             return Ok(sortedProducts);
+        }
+
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <param name="apiClient">The API client.</param>
+        /// <param name="token">The token.</param>
+        /// <returns></returns>
+        private List<Product> GetProducts(ApiClient apiClient, Guid token)
+        {
+            var products = apiClient.ApiResourceProductsGetAsync(token).Result;
+            return products.ToList();
+        }
+
+        /// <summary>
+        /// Recommendeds the products by shopper history.
+        /// </summary>
+        /// <param name="apiClient">The API client.</param>
+        /// <param name="token">The token.</param>
+        /// <returns></returns>
+        private List<Product> RecommendedProductsByShopperHistory(ApiClient apiClient, Guid token)
+        {
+            List<Product> sortedProducts;
+
+            var shopperHistory = apiClient.ApiResourceShopperHistoryGetAsync(token).Result;
+            List<Product> products2 = new List<Product>();
+            foreach (var h in shopperHistory)
+            {
+                products2.AddRange(h.Products);
+            }
+
+            var popularProducts = products2.GroupBy(x => x.Name).Select(g => new Product
+            {
+                Name = g.Key,
+                Price = g.First().Price,
+                Quantity = g.Sum(x => x.Quantity)
+            }).OrderByDescending(x => x.Quantity).ToList(); // assuming "popular" means higher "Quantity"
+                                                            //}).OrderByDescending(x => x.Quantity * x.Price).ToList();
+
+            //sortedProducts = popularProducts.Select(x => { return new Product { Name = x.Name, Price = x.Price, Quantity = 0 }; }).ToList();
+            sortedProducts = popularProducts.ToList();
+            return sortedProducts;
         }
 
         /// <summary>
